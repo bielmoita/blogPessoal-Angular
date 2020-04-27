@@ -38,17 +38,17 @@
                 <div class="form-group">
 
                     <label for="titulo" class="text-monospace">Titulo</label>
-                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Digite seu Titulo">
+                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Digite seu Titulo" [(ngModel)]="postagem.titulo">
 
                     
                 </div>
                 <div class="form-group">
                     <label for="texto" class="text-monospace">Texto: </label>
-                    <textarea name="texto" id="texto" cols="30" rows="4" class="form-control" placeholder="Digite seu texto"></textarea>
+                    <textarea name="texto" id="texto" cols="30" rows="4" class="form-control" placeholder="Digite seu texto" [(ngModel)]="postagem.texto"></textarea>
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-info w-25">Publicar</button>
+                    <button type="button" class="btn btn-outline-info w-25" (click)="publicar()" >Publicar</button>
                 </div>
             </div>
 
