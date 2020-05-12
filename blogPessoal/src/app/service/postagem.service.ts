@@ -36,6 +36,10 @@ export class PostagemService {
   deletePostagem(id:number){
     return this.http.delete(`http://31.220.57.14:8080/postagens/${id}`)
   }
+//Pesauisar por titulo
+  findByTitulo(titulo:string){
+    return this.http.delete(`http://31.220.57.14:8080/postagens/titulo/${titulo}`)
+  }
   
 
 
