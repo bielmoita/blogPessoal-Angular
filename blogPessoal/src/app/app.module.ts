@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { OrderModule } from 'ngx-order-pipe';
 import { EditarComponent } from './editar/editar.component';
+import { DeletarComponent } from './deletar/deletar.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EditarComponent } from './editar/editar.component';
     FeedComponent,
     NavbarComponent,
     FooterComponent,
-    EditarComponent
+    EditarComponent,
+    DeletarComponent
   ],
   imports: [
     BrowserModule,

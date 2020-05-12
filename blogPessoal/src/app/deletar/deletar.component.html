@@ -17,13 +17,7 @@
 
                   <a href="https://www.linkedin.com/in/gabriel-fernando-mcsilva/" class="btn btn-outline-info d-flex justify-content-center mb-3" target="_blank">LinkedIn</a>
 
-                  <a href="https://github.com/bielmoita" class="btn btn-outline-dark d-flex justify-content-center" target="_blank">GitHub</a>
-
-                  <hr class="mt-4 mb-4">
-
-                  <h6 class="mb-3 text-monospace text-center">Pesquisar por título</h6>
-                  <input type="text" class="form-control mb-3 w-100" placeholder="Pesquisar postagem">
-                  <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
+                  <a href="https://github.com/bielmoita" class="btn btn-outline-dark d-flex justify-content-center" target="_blank">GitHub</a>                  
 
                 </div>
               </div>
@@ -33,67 +27,18 @@
         <div class="col-md-8">
 
             <div>
-                <h3 class="text-center text-monospace">Como tem sido minha experiência na Generation?</h3>
+                <h3 class="text-center text-monospace">Deletar Postagem</h3>
                 
-                <div class="form-group">
-
-                    <label for="titulo" class="text-monospace">Titulo</label>
-                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Digite seu Titulo" [(ngModel)]="postagem.titulo">
-
-                    
-                </div>
-                <div class="form-group">
-                    <label for="texto" class="text-monospace">Texto: </label>
-                    <textarea name="texto" id="texto" cols="30" rows="4" class="form-control" placeholder="Digite seu texto" [(ngModel)]="postagem.texto"></textarea>
-                </div>
-
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-info w-25" (click)="publicar()" >Publicar</button>
-                </div>
             </div>
 
             <hr class="mt-5 mb-5">
 
-            <h3 class="text-monospace text-center mb-5">Minhas postagens</h3>
-
-            <div *ngIf = 'alerta'>
-                <div class="alert alert-success" role="alert">
-                    Postagem apagada com sucesso!
-                  </div>
-    
-
-            </div>
-
             
 
-
-            <div class="card mb-4" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
+            <div class="card mb-4" >
 
                 <div class="card-header">
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5 class="card-title"> {{ postagem.titulo }} </h5>
-
-                        </div>
-
-                        <div class="col-md-4 d-flex justify-content-end">
-                            <button class="btn btn-outline-info mr-3" [routerLink] = "['/editar', postagem.id]" >
-                                Editar
-                            </button>
-
-                            <button class="btn btn-outline-danger" [routerLink] = "['/deletar', postagem.id]">Apagar</button>
-
-                        </div>
-
-                        
-
-
-
-                    </div>
-
-                    
-                    
+                   <h5 class="card-title"> {{ postagem.titulo }} </h5>
                     
                 </div>
 
@@ -104,6 +49,25 @@
                     </small>
                     
                     
+                </div>
+
+            </div>
+
+            <hr class="mt-5 mb-5">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="text-monospace text-center mb-5">Tem certeza que deseja apagar essa postagem?</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+
+                    <button class="btn btn-outline-success mr-3" (click)="btnSim()">SIM</button>
+
+                    <button class="btn btn-outline-danger" (click)="btnNao()">NÃO</button>
+
                 </div>
 
             </div>
@@ -184,3 +148,4 @@
 
 
 </div> -->
+

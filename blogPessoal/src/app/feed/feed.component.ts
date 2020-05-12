@@ -16,10 +16,24 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem;
 
+  alerta:boolean = false
+
   constructor(private postagemService: PostagemService) { }
 
   ngOnInit() {
     this.findAllPostagens()
+
+    let item:string = localStorage.getItem('delOk')
+    
+    if (item == "true"){
+      this.alerta = true
+      localStorage.clear()
+
+      setTimeout(()=>{
+        location.assign('/feed')
+      }, 3000)
+    }
+
   }
 
   findAllPostagens(){
